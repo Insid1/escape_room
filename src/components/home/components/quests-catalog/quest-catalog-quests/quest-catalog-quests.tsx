@@ -1,12 +1,13 @@
 import * as S from '../quests-catalog.styled';
 import QuestCatalogFilterList from './quest-catalog-quests-list';
 
-function QuestCatalogFilter() {
+function QuestCatalogQuests() {
   return (
-    <S.Tabs>
+    <S.QuestsList>
       <QuestCatalogFilterList />
-    </S.Tabs>
+    </S.QuestsList>
+
   );
 }
 
-export default QuestCatalogFilter;
+export default QuestCatalogQuests;

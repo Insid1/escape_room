@@ -109,6 +109,7 @@ const Quest = styled.article`
   min-width: 344px;
   min-height: 232px;
 
+  transition: transform 0.1s ease-in-out;
   @media (max-width: 1150px) {
     min-width: 303px;
     min-height: 204px;
@@ -130,6 +131,9 @@ const Quest = styled.article`
     );
 
     border-radius: 3px;
+  }
+  &:hover {
+    transform: scale(1.02);
   }
 `;
 

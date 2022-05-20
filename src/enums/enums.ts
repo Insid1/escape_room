@@ -4,6 +4,12 @@ enum QuestType {
   Mystic = 'mystic',
   Detective = 'detective',
   Adventures = 'adventures',
-  SciFi = 'Sci-fi',
+  SciFi = 'sci-fi',
 }
-export { QuestType };
+
+enum QuestComplexity {
+  hard = 'Сложный',
+  medium = 'Средний',
+  easy = 'Легкий',
+}
+export { QuestType, QuestComplexity };

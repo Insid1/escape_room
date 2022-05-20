@@ -1,6 +1,15 @@
+import { useAppSelector } from 'store/hooks';
+import { selectFilteredQuests } from 'store/quests/selectors';
+import QuestCatalogQuestsItem from './quest-catalog-quests-item';
+
 function QuestCatalogQuestsList() {
+  const quests = useAppSelector(selectFilteredQuests);
   return (
-    <div>1</div>
+    <>
+      {quests.map((quest) => (
+        <QuestCatalogQuestsItem key={quest.id} {...quest} />
+      ))}
+    </>
   );
 }
 
