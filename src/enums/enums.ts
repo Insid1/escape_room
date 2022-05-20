@@ -1,9 +1,9 @@
 enum QuestType {
-  All = 'All',
-  Horror = 'Horror',
-  Mystic = 'Mystic',
-  Detective = 'Detective',
-  Adventures = 'Adventures',
-  SciFi = 'SciFi',
+  All = 'all',
+  Horror = 'horror',
+  Mystic = 'mystic',
+  Detective = 'detective',
+  Adventures = 'adventures',
+  SciFi = 'Sci-fi',
 }
 export { QuestType };
