@@ -1,4 +1,4 @@
-import { QuestType } from 'enums/enums';
+import { QuestType } from 'consts/enums';
 import { IQuest } from 'types/quest-type';
 
 const filterByType = (quests: IQuest[], filterType: QuestType): IQuest[] => {

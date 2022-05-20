@@ -1,4 +1,4 @@
-import { QuestType } from 'enums/enums';
+import { QuestType } from 'consts/enums';
 import QuestCatalogFilterItem from './quest-catalog-filter-item/quest-catalog-filter-item';
 
 function QuestCatalogFilterList() {

@@ -8,6 +8,7 @@ enum AppRoutes {
   Reviews = '/reviews',
   Promo = '/promo',
   Contacts = '/contacts',
+  Error = '*',
 }
 
 export { ApiRoutes, AppRoutes };

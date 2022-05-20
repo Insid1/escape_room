@@ -1,8 +1,9 @@
 import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import { IQuest } from 'types/quest-type';
-import { AppRoutes } from 'enums/routes';
-import { QuestComplexity } from 'enums/enums';
+import { AppRoutes } from 'consts/routes';
+import { PUBLIC_FOLDER } from 'consts/consts';
+import { MapToComplexityName } from 'consts/maps';
 import * as S from '../quests-catalog.styled';
 
 function QuestCatalogQuestsItem(props: IQuest) {
@@ -14,7 +15,7 @@ function QuestCatalogQuestsItem(props: IQuest) {
       <S.QuestItemLink to={AppRoutes.Quest + id}>
         <S.Quest>
           <S.QuestImage
-            src={previewImg}
+            src={`${PUBLIC_FOLDER}/${previewImg}`}
             width="344"
             height="232"
             alt={`квест ${title}`}
@@ -30,7 +31,7 @@ function QuestCatalogQuestsItem(props: IQuest) {
               </S.QuestFeatureItem>
               <S.QuestFeatureItem>
                 <IconPuzzle />
-                {QuestComplexity[level]}
+                {MapToComplexityName[level]}
               </S.QuestFeatureItem>
             </S.QuestFeatures>
           </S.QuestContent>

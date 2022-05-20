@@ -4,15 +4,15 @@ import axios from 'axios';
 import { ApiRoutes } from 'consts/routes';
 import type { IQuest } from 'types/quest-type';
 
-const fetchQuests = createAsyncThunk<
-IQuest[],
-undefined,
+const fetchQuest = createAsyncThunk<
+IQuest,
+string,
 { rejectValue: string }
 >(
-  'quests/fetchQuests',
-  async () => {
+  'quest/fetchQuests',
+  async (id) => {
     try {
-      const response = await api.get(ApiRoutes.Quests);
+      const response = await api.get(`${ApiRoutes.Quests}${id}`);
       return response.data;
     } catch (err) {
       // В дальнейшем в slice можно обработать сообщения об ошибке
@@ -24,4 +24,4 @@ undefined,
   },
 );
 
-export { fetchQuests };
+export { fetchQuest };

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { QuestType } from 'enums/enums';
+import { QuestType } from 'consts/enums';
 
 interface IInitialState {
   questTypeFilter: QuestType

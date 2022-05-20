@@ -1,4 +1,4 @@
-import { QuestType } from 'enums/enums';
+import { QuestType } from 'consts/enums';
 import { useAppDispatch, useAppSelector } from 'store/hooks';
 import { setQuestTypeFilter } from 'store/interface/slice';
 import { selectQuestTypeFilter } from 'store/interface/selectors';

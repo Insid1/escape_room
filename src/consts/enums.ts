@@ -7,9 +7,9 @@ enum QuestType {
   SciFi = 'sci-fi',
 }
 
-enum QuestComplexity {
-  hard = 'Сложный',
-  medium = 'Средний',
-  easy = 'Легкий',
+enum QuestComplexityType {
+  Hard = 'hard',
+  Medium = 'medium',
+  Easy = 'easy',
 }
-export { QuestType, QuestComplexity };
+export { QuestType, QuestComplexityType };

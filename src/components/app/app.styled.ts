@@ -1,4 +1,4 @@
-import { createGlobalStyle, ThemeProps } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 import RalewayRegularWoff2 from 'assets/fonts/raleway-regular.woff2';
 import RalewayMediumWoff2 from 'assets/fonts/raleway-medium.woff2';
 import RalewaySemiBoldWoff2 from 'assets/fonts/raleway-semibold.woff2';

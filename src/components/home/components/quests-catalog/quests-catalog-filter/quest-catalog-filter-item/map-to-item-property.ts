@@ -4,7 +4,7 @@ import { ReactComponent as IconHorrors } from 'assets/img/icon-horrors.svg';
 import { ReactComponent as IconMystic } from 'assets/img/icon-mystic.svg';
 import { ReactComponent as IconDetective } from 'assets/img/icon-detective.svg';
 import { ReactComponent as IconScifi } from 'assets/img/icon-scifi.svg';
-import { QuestType } from 'enums/enums';
+import { QuestType } from 'consts/enums';
 
 type MapToItemPropertyType = {
   [key in QuestType]: {

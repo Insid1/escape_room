@@ -1,4 +1,4 @@
-import { QuestComplexity } from 'enums/enums';
+import { QuestComplexityType } from 'consts/enums';
 
 export interface IQuest {
   id: number,
@@ -7,7 +7,7 @@ export interface IQuest {
   previewImg: string,
   coverImg: string,
   type: string,
-  level: keyof typeof QuestComplexity,
+  level: QuestComplexityType,
   peopleCount: [number, number ],
   duration: number
 }
