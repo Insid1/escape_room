@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { QuestType } from 'enums/enums';
 
 interface IInitialState {
@@ -12,8 +12,12 @@ const initialState: IInitialState = {
 const interfaceSlice = createSlice({
   name: 'interface',
   initialState,
-  reducers: {},
+  reducers: {
+    setQuestTypeFilter(state, action: PayloadAction<QuestType>) {
+      state.questTypeFilter = action.payload;
+    },
+  },
 });
 
-// Добавить экспорты экшенов
+export const { setQuestTypeFilter } = interfaceSlice.actions;
 export default interfaceSlice;
