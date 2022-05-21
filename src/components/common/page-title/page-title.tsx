@@ -2,7 +2,7 @@ import React from 'react';
 import * as S from './page-title.styled';
 
 function PageTitle(
-  { children, ...props }: { children: React.ReactElement[] | React.ReactElement | string },
+  { children, ...props }: React.HTMLAttributes<HTMLHeadingElement>,
 ) {
   return <S.PageTitle {...props}>{children}</S.PageTitle>;
 }
