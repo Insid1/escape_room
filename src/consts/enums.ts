@@ -12,4 +12,11 @@ enum QuestComplexityType {
   Medium = 'medium',
   Easy = 'easy',
 }
-export { QuestType, QuestComplexityType };
+
+enum BookingInputName {
+  Name = 'name',
+  Phone = 'phone',
+  PeopleCount = 'peopleCount',
+}
+
+export { QuestType, QuestComplexityType, BookingInputName };

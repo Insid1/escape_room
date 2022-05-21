@@ -37,5 +37,4 @@ const questSlice = createSlice({
   },
 });
 
-// Добавить экспорты экшенов
 export default questSlice;

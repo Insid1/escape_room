@@ -1,4 +1,6 @@
 import { ReactComponent as IconClose } from 'assets/img/icon-close.svg';
+import { useAppSelector } from 'store/hooks';
+import { selectSendingErrorMessage } from 'store/interface/selectors';
 import BookingModalForm from './booking-modal-form/booking-modal-form';
 import * as S from './booking-modal.styled';
 
@@ -7,6 +9,8 @@ type BookingModalProps = {
 };
 
 function BookingModal({ onModalCloseBtnClick }: BookingModalProps) {
+  const uploadingError = useAppSelector(selectSendingErrorMessage);
+
   return (
     <S.BlockLayer>
       <S.Modal>
@@ -16,6 +20,11 @@ function BookingModal({ onModalCloseBtnClick }: BookingModalProps) {
         </S.ModalCloseBtn>
         <S.ModalTitle>Оставить заявку</S.ModalTitle>
         <BookingModalForm />
+        {
+        uploadingError !== null
+          ? <div>{uploadingError}</div>
+          : ''
+      }
       </S.Modal>
     </S.BlockLayer>
   );

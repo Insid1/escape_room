@@ -1,5 +1,6 @@
 enum ApiRoutes {
   Quests = '/quests/',
+  Orders = '/orders12/',
 }
 enum AppRoutes {
   Main = '/',
