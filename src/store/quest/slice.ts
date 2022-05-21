@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { fetchQuests } from 'store/quests/thunks';
 import { IQuest } from 'types/quest-type';
 import { fetchQuest } from './thunks';
 
@@ -22,13 +23,16 @@ const questSlice = createSlice({
         state.isQuestLoaded = true;
         state.quest = action.payload;
       })
-      .addCase(fetchQuest.pending, (state, action) => {
+      .addCase(fetchQuest.pending, (state) => {
         state.isQuestLoaded = false;
-        state.quest = null;
       })
-      .addCase(fetchQuest.rejected, (state, action) => {
+      .addCase(fetchQuest.rejected, (state) => {
         state.isQuestLoaded = true;
         state.quest = null;
+      })
+      .addCase(fetchQuests.fulfilled, (state) => {
+        state.quest = null;
+        state.isQuestLoaded = false;
       });
   },
 });

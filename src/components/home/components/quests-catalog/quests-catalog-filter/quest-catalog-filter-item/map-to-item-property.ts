@@ -5,38 +5,37 @@ import { ReactComponent as IconMystic } from 'assets/img/icon-mystic.svg';
 import { ReactComponent as IconDetective } from 'assets/img/icon-detective.svg';
 import { ReactComponent as IconScifi } from 'assets/img/icon-scifi.svg';
 import { QuestType } from 'consts/enums';
+import { mapToTypeName } from 'consts/maps';
 
-type MapToItemPropertyType = {
-  [key in QuestType]: {
-    title: string,
-    icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>
-  }
-};
+type MapToItemPropertyScheme = Record<QuestType, {
+  title: string,
+  icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>
+}>;
 
-const MapToItemProperty: MapToItemPropertyType = {
+const mapToItemProperty: MapToItemPropertyScheme = {
   [QuestType.All]: {
     title: 'Все квесты',
     icon: IconAllQuests,
   },
   [QuestType.Adventures]: {
-    title: 'Приключения',
+    title: mapToTypeName[QuestType.Adventures],
     icon: IconAdventures,
   },
   [QuestType.Horror]: {
-    title: 'Ужасы',
+    title: mapToTypeName[QuestType.Horror],
     icon: IconHorrors,
   },
   [QuestType.Mystic]: {
-    title: 'Мистика',
+    title: mapToTypeName[QuestType.Mystic],
     icon: IconMystic,
   },
   [QuestType.Detective]: {
-    title: 'Детектив',
+    title: mapToTypeName[QuestType.Detective],
     icon: IconDetective,
   },
   [QuestType.SciFi]: {
-    title: 'Sci-Fi',
+    title: mapToTypeName[QuestType.SciFi],
     icon: IconScifi,
   },
 };
-export { MapToItemProperty };
+export { mapToItemProperty };
