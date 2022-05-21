@@ -29,6 +29,8 @@ declare module 'styled-components' {
       carrotOrange: string;
       eclipse: string;
       pinkSwan: string;
+      teal: string;
+      pink: string;
     };
   }
 }

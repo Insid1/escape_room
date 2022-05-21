@@ -7,14 +7,25 @@ import * as S from '../booking-modal.styled';
 import BookingModalFormCheckBox from './booking-modal-form-checkbox';
 import BookingModalFormInput from './booking-modal-form-input';
 
-function BookingModalForm() {
+type BookingModalFormProps = {
+  onModalClose: () => void;
+};
+
+function BookingModalForm({ onModalClose }: BookingModalFormProps) {
   const {
-    handleSubmit, register,
+    handleSubmit, register, reset,
   } = useForm<IBookingData>({ shouldUseNativeValidation: true });
   const dispatch = useAppDispatch();
 
   const onSubmit:SubmitHandler<IBookingData> = (data) => {
-    dispatch(postBooking(data));
+    dispatch(postBooking(data))
+      .unwrap()
+      .then(() => {
+        reset();
+        setTimeout(() => {
+          onModalClose();
+        }, 2000);
+      });
   };
 
   return (

@@ -15,9 +15,6 @@ function DetailedQuestContainer() {
   const handleBookingBtnClick: React.MouseEventHandler<HTMLButtonElement> = () => {
     openModal();
   };
-  const handleModalCloseBtnClick: React.MouseEventHandler<HTMLButtonElement> = () => {
-    closeModal();
-  };
   return (
     <S.Main>
       <S.PageImage
@@ -33,7 +30,7 @@ function DetailedQuestContainer() {
       {isBookingModalOpened
         && (
         <BookingModal
-          onModalCloseBtnClick={handleModalCloseBtnClick}
+          onModalClose={closeModal}
         />
         )}
     </S.Main>

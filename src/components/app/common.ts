@@ -26,6 +26,8 @@ const appTheme: DefaultTheme = {
     carrotOrange: '#F39425',
     eclipse: 'rgba(61, 51, 51, 0.96)',
     pinkSwan: '#B8B8B8',
+    teal: '#26a69a80',
+    pink: '#e91e6380',
   },
 };
 

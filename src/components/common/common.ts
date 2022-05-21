@@ -1,6 +1,7 @@
 export {
   Link, Routes, Route, BrowserRouter,
 } from 'react-router-dom';
+export { default as Alert } from './alert/alert';
 export { default as Button } from './button/button';
 export { default as Container } from './container/container';
 export { default as Footer } from './footer/footer';

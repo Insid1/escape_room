@@ -21,21 +21,31 @@ const interfaceSlice = createSlice({
     setQuestTypeFilter(state, action: PayloadAction<QuestType>) {
       state.questTypeFilter = action.payload;
     },
+    setIsBookingSend(state, action: PayloadAction<boolean>) {
+      state.isBookingSend = action.payload;
+    },
+    setSendingErrorMessage(state, action: PayloadAction<string | null>) {
+      state.sendingErrorMessage = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
-      .addCase(postBooking.fulfilled, (state) => {
-        state.isBookingSend = true;
+      .addCase(postBooking.fulfilled, (state, action) => {
+        state.isBookingSend = action.payload;
       })
       .addCase(postBooking.pending, (state) => {
         state.isBookingSend = false;
         state.sendingErrorMessage = null;
       })
-      .addCase(postBooking.rejected, (state) => {
-        state.sendingErrorMessage = 'some error occurred!';
+      .addCase(postBooking.rejected, (state, action) => {
+        state.sendingErrorMessage = action.payload as string;
       });
   },
 });
 
-export const { setQuestTypeFilter } = interfaceSlice.actions;
+export const {
+  setQuestTypeFilter,
+  setIsBookingSend,
+  setSendingErrorMessage,
+} = interfaceSlice.actions;
 export default interfaceSlice;
