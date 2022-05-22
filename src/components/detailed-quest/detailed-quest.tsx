@@ -1,15 +1,16 @@
 import { useEffect } from 'react';
-import { MainLayout } from 'components/common/common';
+import { MainLayout, ToastLoading } from 'components/common/common';
 import { useAppDispatch, useAppSelector } from 'store/hooks';
 import { useParams } from 'react-router-dom';
 import { fetchQuest } from 'store/quest/thunks';
-import { selectQuest } from 'store/quest/selectors';
+import { selectIsQuestLoaded, selectQuestErrorMessage } from 'store/quest/selectors';
 import DetailedQuestContainer from './detailed-quest-container';
 
 function DetailedQuest() {
   const { id } = useParams();
   const dispatch = useAppDispatch();
-  const quest = useAppSelector(selectQuest);
+  const errorMessage = useAppSelector(selectQuestErrorMessage);
+  const isQuestLoaded = useAppSelector(selectIsQuestLoaded);
 
   useEffect(() => {
     dispatch(fetchQuest(id as string));
@@ -17,10 +18,13 @@ function DetailedQuest() {
 
   return (
     <MainLayout>
-      {quest
-        ? <DetailedQuestContainer />
-        // Сделать нормальный лоадер
-        : <p>Loading!!!</p>}
+      <ToastLoading
+        errorMessage={errorMessage}
+        isLoaded={isQuestLoaded}
+        height={800}
+      >
+        <DetailedQuestContainer />
+      </ToastLoading>
     </MainLayout>
   );
 }

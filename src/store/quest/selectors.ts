@@ -4,4 +4,6 @@ const selectQuest = (state: RootState) => state.QuestData.quest;
 
 const selectIsQuestLoaded = (state: RootState) => state.QuestData.isQuestLoaded;
 
-export { selectQuest, selectIsQuestLoaded };
+const selectQuestErrorMessage = (state: RootState) => state.QuestData.errorMessage;
+
+export { selectQuest, selectIsQuestLoaded, selectQuestErrorMessage };

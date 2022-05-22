@@ -7,10 +7,8 @@ const selectQuests = (state: RootState) => state.QuestsData.quests;
 
 const selectIsQuestsLoaded = (state: RootState) => state.QuestsData.isQuestsLoaded;
 
-// const selectFilteredQuests = createSelector(
-//   [selectQuests, selectQuestTypeFilter],
-//   (quests, questFilterType) => filterByType(quests, questFilterType),
-// );
+const selectErrorMessage = (state: RootState) => state.QuestsData.errorMessage;
+
 const selectFilteredQuests = createCachedSelector(
   [selectQuests, selectQuestTypeFilter],
   (quests, questFilterType) => filterByType(quests, questFilterType),
@@ -18,4 +16,7 @@ const selectFilteredQuests = createCachedSelector(
   (state) => state.Interface.questTypeFilter,
 );
 
-export { selectQuests, selectIsQuestsLoaded, selectFilteredQuests };
+export {
+  selectQuests, selectIsQuestsLoaded,
+  selectErrorMessage, selectFilteredQuests,
+};

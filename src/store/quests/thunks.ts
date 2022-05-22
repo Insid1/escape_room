@@ -10,16 +10,16 @@ undefined,
 { rejectValue: string }
 >(
   'quests/fetchQuests',
-  async () => {
+  async (_, { rejectWithValue }) => {
     try {
       const response = await api.get(ApiRoutes.Quests);
       return response.data;
     } catch (err) {
       // В дальнейшем в slice можно обработать сообщения об ошибке
       if (axios.isAxiosError(err)) {
-        return err.message;
+        return rejectWithValue(err.message);
       }
-      return 'unexpected error occurred!';
+      return rejectWithValue('Unexpected error occurred!');
     }
   },
 );

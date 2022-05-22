@@ -5,11 +5,13 @@ import { fetchQuests } from './thunks';
 interface IInitialState {
   quests: Array<IQuest>,
   isQuestsLoaded: boolean,
+  errorMessage: string | null;
 }
 
 const initialState: IInitialState = {
   quests: [],
   isQuestsLoaded: false,
+  errorMessage: null,
 };
 
 const questsSlice = createSlice({
@@ -24,10 +26,11 @@ const questsSlice = createSlice({
       })
       .addCase(fetchQuests.pending, (state) => {
         state.isQuestsLoaded = false;
+        state.errorMessage = null;
       })
       .addCase(fetchQuests.rejected, (state, action) => {
         state.isQuestsLoaded = true;
-        state.quests = [];
+        state.errorMessage = action.payload as string;
       });
   },
 });
