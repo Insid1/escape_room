@@ -1,5 +1,6 @@
 import { IBookingInput } from 'types/booking-type';
 import { BookingInputName, QuestComplexityType, QuestType } from './enums';
+import { AppRoutes } from './routes';
 
 type MapToComplexityNameScheme = Record<QuestComplexityType, string>;
 
@@ -44,4 +45,37 @@ const mapToBookingInputName: MapToBookingInputNameScheme = {
   },
 };
 
-export { mapToComplexityName, mapToTypeName, mapToBookingInputName };
+type MapToNavigationLinksNameScheme = {
+  [key in keyof typeof AppRoutes]?: {
+    to: AppRoutes,
+    title: string,
+  }
+};
+
+const mapToNavigationLinksName: MapToNavigationLinksNameScheme = {
+  Main: {
+    to: AppRoutes.Main,
+    title: 'Квесты',
+  },
+  Newbie: {
+    to: AppRoutes.Newbie,
+    title: 'Новичкам',
+  },
+  Reviews: {
+    to: AppRoutes.Reviews,
+    title: 'Отзывы',
+  },
+  Promo: {
+    to: AppRoutes.Promo,
+    title: 'Акции',
+  },
+  Contacts: {
+    to: AppRoutes.Contacts,
+    title: 'Контакты',
+  },
+};
+
+export {
+  mapToComplexityName, mapToTypeName,
+  mapToBookingInputName, mapToNavigationLinksName,
+};
