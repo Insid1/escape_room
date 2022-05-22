@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { api } from 'api/api';
 import axios from 'axios';
+import { ErrorMessage } from 'consts/enums';
 import { ApiRoutes } from 'consts/routes';
 import type { IQuest } from 'types/quest-type';
 
@@ -19,7 +20,7 @@ string,
       if (axios.isAxiosError(err)) {
         return rejectWithValue(err.message);
       }
-      return rejectWithValue('unexpected error occurred!');
+      return rejectWithValue(ErrorMessage.LoadingFailed);
     }
   },
 );

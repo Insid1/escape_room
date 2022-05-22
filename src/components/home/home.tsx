@@ -7,8 +7,7 @@ import {
 } from 'components/common/common';
 import { useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from 'store/hooks';
-import { selectIsQuestLoaded } from 'store/quest/selectors';
-import { selectErrorMessage } from 'store/quests/selectors';
+import { selectErrorMessage, selectIsQuestsLoaded } from 'store/quests/selectors';
 import { fetchQuests } from 'store/quests/thunks';
 import { QuestsCatalog } from './components/components';
 import * as S from './home.styled';
@@ -16,7 +15,7 @@ import * as S from './home.styled';
 function HomePage() {
   const dispatch = useAppDispatch();
 
-  const isQuestsLoaded = useAppSelector(selectIsQuestLoaded);
+  const isQuestsLoaded = useAppSelector(selectIsQuestsLoaded);
   const errorMessage = useAppSelector(selectErrorMessage);
 
   useEffect(() => {

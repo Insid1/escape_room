@@ -19,4 +19,11 @@ enum BookingInputName {
   PeopleCount = 'peopleCount',
 }
 
-export { QuestType, QuestComplexityType, BookingInputName };
+enum ErrorMessage {
+  LoadingFailed = 'Возникла непредвиденная ошибка!',
+  UploadingSuccess = 'Данные успешно отправлены!',
+}
+
+export {
+  QuestType, QuestComplexityType, BookingInputName, ErrorMessage,
+};

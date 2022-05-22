@@ -1,5 +1,6 @@
 import { ReactComponent as IconClose } from 'assets/img/icon-close.svg';
 import { Alert } from 'components/common/common';
+import { ErrorMessage } from 'consts/enums';
 import { useAppSelector } from 'store/hooks';
 import { selectIsBookingSend, selectSendingErrorMessage } from 'store/interface/selectors';
 import BookingModalForm from './booking-modal-form/booking-modal-form';
@@ -30,7 +31,7 @@ function BookingModal({ onModalClose }: BookingModalProps) {
       }
         {
         isBookingSend
-        && (<Alert>Заявка успешно отправлена!</Alert>
+        && (<Alert>{ErrorMessage.UploadingSuccess}</Alert>
         )
       }
       </S.Modal>

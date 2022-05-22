@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { api } from 'api/api';
 import axios from 'axios';
+import { ErrorMessage } from 'consts/enums';
 import { ApiRoutes } from 'consts/routes';
 import { IBookingData } from 'types/booking-type';
 
@@ -18,7 +19,7 @@ IBookingData,
       if (axios.isAxiosError(err)) {
         return rejectWithValue(err.message);
       }
-      return rejectWithValue('Unexpected error occurred');
+      return rejectWithValue(ErrorMessage.LoadingFailed);
     }
   },
 );
