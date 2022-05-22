@@ -4,7 +4,7 @@ enum ApiRoutes {
 }
 enum AppRoutes {
   Main = '/',
-  Quest = '/quest/',
+  Quest = '/detailed-quest/',
   Newbie = '/newbie',
   Reviews = '/reviews',
   Promo = '/promo',

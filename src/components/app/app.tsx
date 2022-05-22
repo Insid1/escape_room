@@ -8,6 +8,8 @@ import DetailedQuest from 'components/detailed-quest/detailed-quest';
 import Contacts from 'components/contacts/contacts';
 import Home from 'components/home/home';
 import { AppRoutes } from 'consts/routes';
+import ErrorPage from 'components/error/error';
+import DevelopmentToast from 'components/development-toast/development-toast';
 import { appTheme } from './common';
 import * as S from './app.styled';
 
@@ -20,14 +22,12 @@ function App() {
           <Route path={AppRoutes.Main} element={<Home />} />
           <Route path={`${AppRoutes.Quest}:id`} element={<DetailedQuest />} />
           <Route path={AppRoutes.Contacts} element={<Contacts />} />
-          {/* Добавить WIP страницу для новичкам, отзывы, акции */}
 
-          {/* <Route path={AppRoutes.Newbie} element={TOAST} /> */}
-          {/* <Route path={AppRoutes.Reviews} element={TOAST} /> */}
-          {/* <Route path={AppRoutes.Promo} element={TOAST} /> */}
+          <Route path={AppRoutes.Newbie} element={<DevelopmentToast />} />
+          <Route path={AppRoutes.Reviews} element={<DevelopmentToast />} />
+          <Route path={AppRoutes.Promo} element={<DevelopmentToast />} />
 
-          {/* Добавить страницу заглушку для некорректных адресов */}
-          <Route path={AppRoutes.Error} element={<Home />} />
+          <Route path={AppRoutes.Error} element={<ErrorPage />} />
         </Routes>
       </Router>
     </ThemeProvider>
