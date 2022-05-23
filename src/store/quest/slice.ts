@@ -26,6 +26,7 @@ const questSlice = createSlice({
         state.quest = action.payload;
       })
       .addCase(fetchQuest.pending, (state) => {
+        state.errorMessage = null;
         state.isQuestLoaded = false;
       })
       .addCase(fetchQuest.rejected, (state, action) => {

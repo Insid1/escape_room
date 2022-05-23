@@ -16,7 +16,6 @@ string,
       const response = await api.get(`${ApiRoutes.Quests}${id}`);
       return response.data;
     } catch (err) {
-      // В дальнейшем в slice можно обработать сообщения об ошибке
       if (axios.isAxiosError(err)) {
         return rejectWithValue(err.message);
       }
