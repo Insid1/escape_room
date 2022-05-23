@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useAppDispatch } from 'store/hooks';
+import { useAppDispatch } from 'store/hooks/hooks';
 import { setIsBookingSend, setSendingErrorMessage } from 'store/interface/slice';
 
 const useBookingModal = ():[boolean, () => void, () => void] => {

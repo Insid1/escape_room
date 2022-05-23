@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { MainLayout, ToastLoading } from 'components/common/common';
-import { useAppDispatch, useAppSelector } from 'store/hooks';
+import { useAppDispatch, useAppSelector } from 'store/hooks/hooks';
 import { useParams } from 'react-router-dom';
 import { fetchQuest } from 'store/quest/thunks';
 import { selectIsQuestLoaded, selectQuestErrorMessage } from 'store/quest/selectors';

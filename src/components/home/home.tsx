@@ -6,7 +6,7 @@ import {
   ToastLoading,
 } from 'components/common/common';
 import { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from 'store/hooks';
+import { useAppDispatch, useAppSelector } from 'store/hooks/hooks';
 import { selectErrorMessage, selectIsQuestsLoaded } from 'store/quests/selectors';
 import { fetchQuests } from 'store/quests/thunks';
 import { QuestsCatalog } from './components/components';

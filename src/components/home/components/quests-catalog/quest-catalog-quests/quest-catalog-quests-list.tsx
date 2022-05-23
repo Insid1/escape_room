@@ -1,4 +1,4 @@
-import { useAppSelector } from 'store/hooks';
+import { useAppSelector } from 'store/hooks/hooks';
 import { selectFilteredQuests } from 'store/quests/selectors';
 import QuestCatalogQuestsItem from './quest-catalog-quests-item';
 

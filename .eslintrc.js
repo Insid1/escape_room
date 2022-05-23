@@ -24,6 +24,8 @@ module.exports = {
   plugins: [
     'react',
     '@typescript-eslint',
+    'jest-react',
+
   ],
   settings: {
     'import/resolver': {

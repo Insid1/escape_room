@@ -27,13 +27,12 @@ const questsSlice = createSlice({
       .addCase(fetchQuests.pending, (state) => {
         state.isQuestsLoaded = false;
         state.errorMessage = null;
+        state.quests = [];
       })
       .addCase(fetchQuests.rejected, (state, action) => {
-        state.isQuestsLoaded = true;
         state.errorMessage = action.payload as string;
       });
   },
 });
 
-// Добавить экспорты экшенов
 export default questsSlice;

@@ -1,6 +1,6 @@
 import { BookingInputName } from 'consts/enums';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { useAppDispatch } from 'store/hooks';
+import { useAppDispatch } from 'store/hooks/hooks';
 import { postBooking } from 'store/interface/thunks';
 import { IBookingData } from 'types/booking-type';
 import * as S from '../booking-modal.styled';
