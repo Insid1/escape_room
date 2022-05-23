@@ -1,5 +1,7 @@
-import { MainLayout, PageTitle, PageSubtext } from 'components/common/common';
-import contactsMap from 'assets/img/contacts-map.jpg';
+import {
+  MainLayout, PageTitle, PageSubtext, Map,
+} from 'components/common/common';
+import { MAIN_BUILDING_LOCATION } from 'consts/consts';
 import * as S from './contacts.styled';
 
 function Contacts() {
@@ -42,12 +44,7 @@ function Contacts() {
             </S.ContactsList>
 
             <S.ContactsMap>
-              <S.ContactsMapImage
-                src={contactsMap}
-                alt="мы находимся по адресу Санкт-Петербург, Набережная реки Карповка, д 5"
-                width="649"
-                height="336"
-              />
+              <Map center={MAIN_BUILDING_LOCATION} />
             </S.ContactsMap>
           </S.Contacts>
         </S.ContentWrapper>

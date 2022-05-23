@@ -12,6 +12,7 @@ import ErrorPage from 'components/error/error';
 import DevelopmentToast from 'components/development-toast/development-toast';
 import { appTheme } from './common';
 import * as S from './app.styled';
+import 'leaflet/dist/leaflet.css';
 
 function App() {
   return (
