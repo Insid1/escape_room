@@ -10,7 +10,7 @@ IQuest,
 string,
 { rejectValue: string }
 >(
-  'quest/fetchQuests',
+  'quest/fetchQuest',
   async (id, { rejectWithValue }) => {
     try {
       const response = await api.get(`${ApiRoutes.Quests}${id}`);

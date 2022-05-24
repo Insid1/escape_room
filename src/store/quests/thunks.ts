@@ -14,6 +14,7 @@ undefined,
   async (_, { rejectWithValue }) => {
     try {
       const response = await api.get(ApiRoutes.Quests);
+      console.log(response.data);
       return response.data;
     } catch (err) {
       if (axios.isAxiosError(err)) {
