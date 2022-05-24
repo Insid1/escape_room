@@ -14,7 +14,7 @@ function QuestCatalogFilterItem({ title }: QuestCatalogFilterItemProps) {
   const IconComponent = mapToItemProperty[title].icon;
   const currentQuestTypeFilter = useAppSelector(selectQuestTypeFilter);
 
-  const handleClick: React.MouseEventHandler<HTMLButtonElement> = (evt) => {
+  const handleClick: React.MouseEventHandler<HTMLButtonElement> = () => {
     dispatch(setQuestTypeFilter(title));
   };
   return (
