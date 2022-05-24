@@ -1,3 +1,4 @@
+import { DataTestAttribute } from 'consts/data-test-atributes';
 import * as S from './alert.styled';
 
 interface IAlert extends React.HTMLAttributes<HTMLDivElement> {
@@ -6,7 +7,13 @@ interface IAlert extends React.HTMLAttributes<HTMLDivElement> {
 
 function Alert({ isError = false, children, ...props }: IAlert) {
   return (
-    <S.Alert isError={isError} {...props}>{children}</S.Alert>
+    <S.Alert
+      isError={isError}
+      {...props}
+      data-testid={isError ? DataTestAttribute.AlertError : DataTestAttribute.AlertSuccess}
+    >
+      {children}
+    </S.Alert>
   );
 }
 

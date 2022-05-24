@@ -3,6 +3,7 @@ import { ReactComponent as IconPerson } from 'assets/img/icon-person.svg';
 import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import { IQuest } from 'types/quest-type';
 import { mapToComplexityName, mapToTypeName } from 'consts/maps';
+import { DataTestAttribute } from 'consts/data-test-atributes';
 import * as S from './detailed-quest.styled';
 
 type DetailedQuestInfoProps = IQuest & {
@@ -17,7 +18,7 @@ function DetailedQuestContent(props: DetailedQuestInfoProps) {
   } = props;
 
   return (
-    <S.PageContentWrapper>
+    <S.PageContentWrapper data-testid={DataTestAttribute.DetailedQuestContent}>
       <S.PageHeading>
         <S.PageTitle>{title}</S.PageTitle>
         <S.PageSubtitle>{mapToTypeName[type]}</S.PageSubtitle>

@@ -3,7 +3,7 @@ import {
   fakeNetWorkResponse, fakeNetWorkResponseError,
   FAKE_BAD_REQUEST_MSG,
   FAKE_BOOKING,
-} from 'test/test.data';
+} from 'test/mock-data';
 import { postBooking } from './thunks';
 
 describe('Async Thunk postBooking works correctly with positive cases', () => {

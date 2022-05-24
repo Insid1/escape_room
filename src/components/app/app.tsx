@@ -7,8 +7,8 @@ import DetailedQuest from 'components/detailed-quest/detailed-quest';
 import Contacts from 'components/contacts/contacts';
 import Home from 'components/home/home';
 import { AppRoutes } from 'consts/routes';
-import ErrorPage from 'components/error/error';
-import DevelopmentToast from 'components/development-toast/development-toast';
+import NotFoundPage from 'components/not-found/not-found';
+import DevelopmentToastPage from 'components/development-toast/development-toast';
 import { unstable_HistoryRouter as HistoryRouter } from 'react-router-dom';
 import history from 'history/history';
 import { appTheme } from './common';
@@ -25,11 +25,11 @@ function App() {
           <Route path={`${AppRoutes.Quest}:id`} element={<DetailedQuest />} />
           <Route path={AppRoutes.Contacts} element={<Contacts />} />
 
-          <Route path={AppRoutes.Newbie} element={<DevelopmentToast />} />
-          <Route path={AppRoutes.Reviews} element={<DevelopmentToast />} />
-          <Route path={AppRoutes.Promo} element={<DevelopmentToast />} />
+          <Route path={AppRoutes.Newbie} element={<DevelopmentToastPage />} />
+          <Route path={AppRoutes.Reviews} element={<DevelopmentToastPage />} />
+          <Route path={AppRoutes.Promo} element={<DevelopmentToastPage />} />
 
-          <Route path={AppRoutes.Error} element={<ErrorPage />} />
+          <Route path={AppRoutes.Error} element={<NotFoundPage />} />
         </Routes>
       </HistoryRouter>
     </ThemeProvider>

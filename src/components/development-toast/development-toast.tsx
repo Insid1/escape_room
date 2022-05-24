@@ -7,7 +7,7 @@ import {
 import { AppRoutes } from 'consts/routes';
 import * as S from './development-toast.styled';
 
-function DevelopmentToast() {
+function DevelopmentToastPage() {
   return (
     <MainLayout>
       <S.Main forwardedAs="main">
@@ -20,4 +20,4 @@ function DevelopmentToast() {
   );
 }
 
-export default DevelopmentToast;
+export default DevelopmentToastPage;

@@ -5,9 +5,9 @@ import {
   Link,
 } from 'components/common/common';
 import { AppRoutes } from 'consts/routes';
-import * as S from './error.styled';
+import * as S from './not-found.styled';
 
-function ErrorPage() {
+function NotFoundPage() {
   return (
     <MainLayout>
       <S.Main forwardedAs="main">
@@ -20,4 +20,4 @@ function ErrorPage() {
   );
 }
 
-export default ErrorPage;
+export default NotFoundPage;

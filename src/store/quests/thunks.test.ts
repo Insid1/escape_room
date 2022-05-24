@@ -3,7 +3,7 @@ import {
   fakeNetWorkResponse, fakeNetWorkResponseError,
   FAKE_BAD_REQUEST_MSG,
   FAKE_QUESTS,
-} from 'test/test.data';
+} from 'test/mock-data';
 import { fetchQuests } from './thunks';
 
 describe('Async Thunk fetchQuest works correctly with positive cases', () => {
