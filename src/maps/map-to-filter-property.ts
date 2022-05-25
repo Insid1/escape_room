@@ -5,14 +5,14 @@ import { ReactComponent as IconMystic } from 'assets/img/icon-mystic.svg';
 import { ReactComponent as IconDetective } from 'assets/img/icon-detective.svg';
 import { ReactComponent as IconScifi } from 'assets/img/icon-scifi.svg';
 import { QuestType } from 'consts/enums';
-import { mapToTypeName } from 'consts/maps';
+import { mapToTypeName } from './map-to-type-name';
 
-type MapToItemPropertyScheme = Record<QuestType, {
+type MapToFilterPropertyScheme = Record<QuestType, {
   title: string,
   icon: React.FunctionComponent<React.SVGProps<SVGSVGElement>>
 }>;
 
-const mapToItemProperty: MapToItemPropertyScheme = {
+const mapToFilterProperty: MapToFilterPropertyScheme = {
   [QuestType.All]: {
     title: 'Все квесты',
     icon: IconAllQuests,
@@ -38,4 +38,4 @@ const mapToItemProperty: MapToItemPropertyScheme = {
     icon: IconScifi,
   },
 };
-export { mapToItemProperty };
+export { mapToFilterProperty };

@@ -2,8 +2,8 @@ import { QuestType } from 'consts/enums';
 import { useAppDispatch, useAppSelector } from 'store/hooks/hooks';
 import { setQuestTypeFilter } from 'store/interface/slice';
 import { selectQuestTypeFilter } from 'store/interface/selectors';
+import { mapToFilterProperty } from 'maps/map-to-filter-property';
 import * as S from '../../quests-catalog.styled';
-import { mapToItemProperty } from './map-to-item-property';
 
 type QuestCatalogFilterItemProps = {
   title: QuestType,
@@ -11,7 +11,7 @@ type QuestCatalogFilterItemProps = {
 
 function QuestCatalogFilterItem({ title }: QuestCatalogFilterItemProps) {
   const dispatch = useAppDispatch();
-  const IconComponent = mapToItemProperty[title].icon;
+  const IconComponent = mapToFilterProperty[title].icon;
   const currentQuestTypeFilter = useAppSelector(selectQuestTypeFilter);
 
   const handleClick: React.MouseEventHandler<HTMLButtonElement> = () => {
@@ -24,7 +24,7 @@ function QuestCatalogFilterItem({ title }: QuestCatalogFilterItemProps) {
         isActive={title === currentQuestTypeFilter}
       >
         <IconComponent />
-        <S.TabTitle>{mapToItemProperty[title].title}</S.TabTitle>
+        <S.TabTitle>{mapToFilterProperty[title].title}</S.TabTitle>
       </S.TabBtn>
     </S.TabItem>
   );

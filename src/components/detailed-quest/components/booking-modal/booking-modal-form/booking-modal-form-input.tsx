@@ -1,5 +1,5 @@
 import { BookingInputName } from 'consts/enums';
-import { mapToBookingInputName } from 'consts/maps';
+import { mapToBookingInputName } from 'maps/map-to-booking-input-name';
 import { UseFormRegister } from 'react-hook-form';
 import { IBookingData } from 'types/booking-type';
 import * as S from '../booking-modal.styled';

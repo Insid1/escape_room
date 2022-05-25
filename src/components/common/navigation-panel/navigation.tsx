@@ -1,5 +1,5 @@
 import NavigationLink from 'components/common/navigation-link/navigation-link';
-import { mapToNavigationLinksName } from 'consts/maps';
+import { mapToNavigationLinksName } from 'maps/map-to-navigation-links-name';
 import * as S from './navigation.styled';
 
 function NavigationPanel() {

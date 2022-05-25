@@ -3,7 +3,7 @@ import { ReactComponent as IconPuzzle } from 'assets/img/icon-puzzle.svg';
 import { IQuest } from 'types/quest-type';
 import { AppRoutes } from 'consts/routes';
 import { PUBLIC_FOLDER } from 'consts/consts';
-import { mapToComplexityName } from 'consts/maps';
+import { mapToComplexityName } from 'maps/map-to-complexity-name';
 import * as S from '../quests-catalog.styled';
 
 function QuestCatalogQuestsItem(props: IQuest) {
