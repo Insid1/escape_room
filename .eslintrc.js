@@ -84,6 +84,6 @@ module.exports = {
         depth: 3,
       },
     ],
-
+    'linebreak-style': 0,
   },
 };
