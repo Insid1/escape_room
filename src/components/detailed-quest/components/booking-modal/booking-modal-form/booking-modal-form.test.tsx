@@ -11,7 +11,7 @@ it('BookingModalFormInput component should render correctly with given title nam
       <BookingModalForm onModalClose={fakeOnClose} />
     </MockWrapperWithAllProviders>,
   );
-
-  expect(screen.getByRole('button'))
+  const submitBtn = screen.getByRole('button');
+  expect(submitBtn)
     .toBeInTheDocument();
 });
