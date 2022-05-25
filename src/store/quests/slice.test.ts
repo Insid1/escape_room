@@ -1,4 +1,4 @@
-import { FAKE_QUESTS } from 'test/mock-data';
+import { FAKE_QUESTS } from 'test-utils/mock-data';
 import questsSlice from './slice';
 import { fetchQuests } from './thunks';
 

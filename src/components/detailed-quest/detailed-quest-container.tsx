@@ -3,7 +3,7 @@ import useBookingModal from 'hooks/use-booking-modal';
 import { useAppSelector } from 'store/hooks/hooks';
 import { selectQuest } from 'store/quest/selectors';
 import { PUBLIC_FOLDER } from 'consts/consts';
-import { DataTestAttribute } from 'consts/data-test-atributes';
+import { DataTestAttribute } from 'test-utils/data-test-atributes';
 import DetailedQuestContent from './detailed-quest-content';
 import * as S from './detailed-quest.styled';
 import { BookingModal } from './components/components';

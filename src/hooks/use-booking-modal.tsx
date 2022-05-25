@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useAppDispatch } from 'store/hooks/hooks';
 import { setIsBookingSend, setSendingErrorMessage } from 'store/interface/slice';
 
+// Hook is created to passing props from it to BookingModalComponent
 const useBookingModal = ():[boolean, () => void, () => void] => {
   const [isBookingModalOpened, setIsBookingModalOpened] = useState<boolean>(false);
   const dispatch = useAppDispatch();

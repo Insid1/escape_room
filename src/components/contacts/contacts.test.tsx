@@ -1,18 +1,14 @@
-import { createMemoryHistory } from 'history';
 import { render, screen } from '@testing-library/react';
-import { unstable_HistoryRouter as Router } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
-import { appTheme } from 'components/app/common';
+import { MockWrapperWithRouter, MockWrapperWithTheme } from 'test-utils/wrappers';
 import Contacts from './contacts';
 
 it('contacts page should render correctly', () => {
-  const history = createMemoryHistory();
   render(
-    <ThemeProvider theme={appTheme}>
-      <Router history={history}>
+    <MockWrapperWithTheme>
+      <MockWrapperWithRouter>
         <Contacts />
-      </Router>
-    </ThemeProvider>,
+      </MockWrapperWithRouter>
+    </MockWrapperWithTheme>,
   );
 
   expect(screen.getByText(/квесты в санкт-петербурге/i))

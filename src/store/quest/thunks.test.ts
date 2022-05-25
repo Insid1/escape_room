@@ -1,7 +1,7 @@
 import store from 'store/store';
 import {
   fakeNetWorkResponse, fakeNetWorkResponseError, FAKE_NOT_FOUND_MSG, FAKE_QUEST, FAKE_QUESTS,
-} from 'test/mock-data';
+} from 'test-utils/mock-data';
 import { fetchQuest } from './thunks';
 
 describe('Async Thunk fetchQuest works correctly with positive cases', () => {

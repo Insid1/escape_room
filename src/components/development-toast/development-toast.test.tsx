@@ -1,18 +1,14 @@
-import { createMemoryHistory } from 'history';
 import { render, screen } from '@testing-library/react';
-import { unstable_HistoryRouter as Router } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
-import { appTheme } from 'components/app/common';
+import { MockWrapperWithRouter, MockWrapperWithTheme } from 'test-utils/wrappers';
 import DevelopmentToastPage from './development-toast';
 
 it('error page should render correctly', () => {
-  const history = createMemoryHistory();
   render(
-    <ThemeProvider theme={appTheme}>
-      <Router history={history}>
+    <MockWrapperWithTheme>
+      <MockWrapperWithRouter>
         <DevelopmentToastPage />
-      </Router>
-    </ThemeProvider>,
+      </MockWrapperWithRouter>
+    </MockWrapperWithTheme>,
   );
   const generalInfoElement = screen.getByText('Страница находится в разработке');
   const RedirectElement = screen.getByText('Перейти на главную');

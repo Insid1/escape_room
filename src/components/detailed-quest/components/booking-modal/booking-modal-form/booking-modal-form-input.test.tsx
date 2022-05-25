@@ -1,32 +1,19 @@
-import { ThemeProvider } from 'styled-components';
-import { unstable_HistoryRouter as Router } from 'react-router-dom';
-import { createMemoryHistory } from 'history';
-import { appTheme } from 'components/app/common';
 import { render, screen } from '@testing-library/react';
 import { jest } from '@jest/globals';
-import { Provider } from 'react-redux';
-import { configureMockStore } from '@jedmao/redux-mock-store';
-import { FAKE_EMPTY_STORE } from 'test/mock-store.data';
+import { FAKE_EMPTY_STORE } from 'test-utils/mock-store.data';
 import { BookingInputName } from 'consts/enums';
 import { UseFormRegister } from 'react-hook-form';
 import { IBookingData } from 'types/booking-type';
 import userEvent from '@testing-library/user-event';
+import { MockWrapperWithAllProviders } from 'test-utils/wrappers';
 import BookingModalFormInput from './booking-modal-form-input';
 
+const fakeRegister = jest.fn() as UseFormRegister<IBookingData>;
 it('BookingModalFormInput component should render correctly with given title name', () => {
-  const history = createMemoryHistory();
-  const fakeRegister = jest.fn() as UseFormRegister<IBookingData>;
-
-  const mockStore = configureMockStore();
   render(
-    <Provider store={mockStore(FAKE_EMPTY_STORE)}>
-      <ThemeProvider theme={appTheme}>
-        <Router history={history}>
-          <BookingModalFormInput register={fakeRegister} title={'name' as BookingInputName} />
-        </Router>
-      </ThemeProvider>
-      ,
-    </Provider>,
+    <MockWrapperWithAllProviders storeData={FAKE_EMPTY_STORE}>
+      <BookingModalFormInput register={fakeRegister} title={'name' as BookingInputName} />
+    </MockWrapperWithAllProviders>,
   );
 
   expect(screen.getByLabelText(/Ваше Имя/i))
@@ -38,19 +25,10 @@ it('BookingModalFormInput component should render correctly with given title nam
   expect(screen.getByDisplayValue(/oleg/i)).toBeInTheDocument();
 });
 it('BookingModalFormInput component should render correctly with given title phone', () => {
-  const history = createMemoryHistory();
-  const fakeRegister = jest.fn() as UseFormRegister<IBookingData>;
-
-  const mockStore = configureMockStore();
   render(
-    <Provider store={mockStore(FAKE_EMPTY_STORE)}>
-      <ThemeProvider theme={appTheme}>
-        <Router history={history}>
-          <BookingModalFormInput register={fakeRegister} title={'phone' as BookingInputName} />
-        </Router>
-      </ThemeProvider>
-      ,
-    </Provider>,
+    <MockWrapperWithAllProviders storeData={FAKE_EMPTY_STORE}>
+      <BookingModalFormInput register={fakeRegister} title={'phone' as BookingInputName} />
+    </MockWrapperWithAllProviders>,
   );
 
   expect(screen.getByLabelText(/Контактный телефон/))
@@ -61,19 +39,10 @@ it('BookingModalFormInput component should render correctly with given title pho
   expect(screen.getByDisplayValue(/1111111111/i)).toBeInTheDocument();
 });
 it('BookingModalFormInput component should render correctly with given title peopeCount', () => {
-  const history = createMemoryHistory();
-  const fakeRegister = jest.fn() as UseFormRegister<IBookingData>;
-
-  const mockStore = configureMockStore();
   render(
-    <Provider store={mockStore(FAKE_EMPTY_STORE)}>
-      <ThemeProvider theme={appTheme}>
-        <Router history={history}>
-          <BookingModalFormInput register={fakeRegister} title={'peopleCount' as BookingInputName} />
-        </Router>
-      </ThemeProvider>
-      ,
-    </Provider>,
+    <MockWrapperWithAllProviders storeData={FAKE_EMPTY_STORE}>
+      <BookingModalFormInput register={fakeRegister} title={'peopleCount' as BookingInputName} />
+    </MockWrapperWithAllProviders>,
   );
 
   expect(screen.getByLabelText(/Количество участников/))

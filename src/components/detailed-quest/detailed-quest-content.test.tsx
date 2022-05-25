@@ -1,16 +1,15 @@
-import { ThemeProvider } from 'styled-components';
-import { appTheme } from 'components/app/common';
 import { render, screen } from '@testing-library/react';
-import { FAKE_QUEST } from 'test/mock-data';
+import { FAKE_QUEST } from 'test-utils/mock-data';
 import { jest } from '@jest/globals';
+import { MockWrapperWithTheme } from 'test-utils/wrappers';
 import DetailedQuestContent from './detailed-quest-content';
 
 it('DetailedQuestContent component should render given data', () => {
   const fakeOnBookingButtonClick = jest.fn();
   render(
-    <ThemeProvider theme={appTheme}>
+    <MockWrapperWithTheme>
       <DetailedQuestContent onBookingBtnClick={fakeOnBookingButtonClick} {...FAKE_QUEST} />
-    </ThemeProvider>,
+    </MockWrapperWithTheme>,
 
   );
 

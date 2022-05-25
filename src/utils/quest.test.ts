@@ -1,5 +1,5 @@
 import { QuestComplexityType, QuestType } from 'consts/enums';
-import { FAKE_QUESTS } from 'test/mock-data';
+import { FAKE_QUESTS } from 'test-utils/mock-data';
 import { filterByType } from './quest';
 
 describe('Function filterByType works correctly with given data', () => {

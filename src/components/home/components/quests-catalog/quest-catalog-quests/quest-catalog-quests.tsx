@@ -1,4 +1,4 @@
-import { DataTestAttribute } from 'consts/data-test-atributes';
+import { DataTestAttribute } from 'test-utils/data-test-atributes';
 import * as S from '../quests-catalog.styled';
 import QuestCatalogFilterList from './quest-catalog-quests-list';
 
